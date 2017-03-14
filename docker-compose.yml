@@ -1,0 +1,18 @@
+# https://docs.docker.com/compose/yml/
+
+version: '2'
+services:
+  backend:
+    image: mgcrea/node-openbr:1.1.0
+    container_name: node_openbr
+    # command: bash -c "npm i -gq node-gyp && npm install --unsafe-perm && node ."
+    # command: bash -c "npm i -gq nodemon node-gyp && npm install --unsafe-perm && nodemon -L -w src/ -e js,cc -x 'node-gyp rebuild && node .'"
+    command: bash -c "npm install --unsafe-perm && node_modules/.bin/nodemon -L -w src/ -e js,cc -x 'node_modules/.bin/node-gyp rebuild && node .'"
+    working_dir: /srv/node
+    environment:
+      - NODE_ENV=production
+      - LD_LIBRARY_PATH=/usr/local/lib/
+    expose:
+      - "3000"
+    volumes:
+      - .:/srv/node

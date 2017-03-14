@@ -1,0 +1,20 @@
+{
+  "name": "openbr",
+  "version": "0.0.0",
+  "description": "Node.js Addons Example #1",
+  "main": "src/openbr.js",
+  "private": true,
+  "dependencies": {
+    "bindings": "^1.2.1",
+    "nan": "^2.3.3"
+  },
+  "scripts": {
+    "start": "node .",
+    "test": "node src/openbr.js"
+  },
+  "gypfile": true,
+  "devDependencies": {
+    "node-gyp": "^3.3.1",
+    "nodemon": "^1.9.2"
+  }
+}
